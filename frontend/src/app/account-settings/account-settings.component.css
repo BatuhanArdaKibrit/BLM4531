@@ -1,0 +1,27 @@
+div#container{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+div#form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 55px;
+    transform: translate(0,-50px);
+}
+
+div.col{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+}
+
+.mr-3{
+    margin-right: 24px;
+}
+

@@ -1,0 +1,31 @@
+<div id="container">
+    <div id="content">
+    <div id="title-content">
+        <div id="show-string">
+        @if(!foods.length){
+            <span>{{emptyString}}</span>
+        }
+        @if(!result.length && foods.length){
+            <span>{{resultString}}</span>
+        }
+        </div>
+        <div id="search-box">
+            <div id="search">
+                <span class="p-input-icon-right">
+                    <i class="pi pi-search"></i>
+                    <input type="text" pInputText [(ngModel)]="search" (input)="searchCheck()" placeholder="Arama yap..."/>
+                </span>
+            </div>    
+        </div>
+        <button mat-flat-button color="accent" id="add-recipe" [routerLink]="['/add_recipe']">Tarif ekle</button>
+    </div>
+    <div id="food-content">
+        @if(result.length){
+            @for (food of result; track $index) {
+                <app-food-card [food]="food"></app-food-card>
+            }
+        }
+    </div>
+    </div>
+</div>
+

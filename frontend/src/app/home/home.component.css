@@ -1,0 +1,24 @@
+main{
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+}
+div#search-box{
+    width: 1200px;
+    margin-top: 25px;
+}
+div#search{
+    text-align: right;
+}
+
+
+article{
+    width: 1200px;
+    display: grid;
+    gap: 50px;
+    margin-block: 25px;
+    grid-template-columns: repeat(3,1fr);
+}
+
+

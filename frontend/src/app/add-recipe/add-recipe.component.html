@@ -1,0 +1,32 @@
+<div id="container">  
+  <div id="content">
+    <b>Bilgileri doldurunuz...</b>
+    <form action="" (ngSubmit)="onSubmit()" #Form>
+      <span class="p-float-label">
+        <input pInputText name="name" type="text" [(ngModel)]="food.name" required>
+        <label for="float-input">Yemek ismi</label>
+      </span>
+      <span class="p-float-label">
+        <input pInputText type="text" name="type" [(ngModel)]="food.type">
+        <label for="float-input">Tür</label>
+      </span>
+      <span class="p-float-label">
+        <p-chips name="ingredients" [style]="{'max-width':'100%'}" [(ngModel)]="food.ingredients" [allowDuplicate]="false"></p-chips>
+        <label for="float-input">Malzemeler</label>
+      </span>
+      <span class="p-float-label">
+        <textarea id="float-input" rows="5" cols="50" [style]="{'max-width':'100%'}" pInputTextarea [autoResize]="true" name="recipe"  [(ngModel)]="food.recipe"></textarea>
+        <label for="float-input">Tarif</label>
+      </span>
+      <p-fileUpload url="https://www.primefaces.org/cdn/api/upload.php" accept="image/*" 
+      chooseLabel="Fotoğraf" mode="advanced" [auto]="true" [customUpload]="true" (uploadHandler)="saveTheImage($event)">
+      <ng-template pTemplate="content"></ng-template>
+      </p-fileUpload>
+      <div id="buttons">
+        <p-button icon="pi pi-angle-left" (click)="this.router.navigate(['/my_recipes'])"></p-button>
+        <button pButton type="submit" label="Yemeği ekle..."></button>
+      </div>
+      
+    </form>
+  </div>
+</div>

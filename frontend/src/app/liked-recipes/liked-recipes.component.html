@@ -1,0 +1,26 @@
+<div id="container">
+    <div id="content">
+    <div id="title-content">
+    @if(!foods.length){
+        <span>{{emptyString}}</span>
+    }
+    @if(!result.length && foods.length){
+        <span>{{resultString}}</span>
+    }
+    <div id="search-box">
+        <div id="search">
+            <span class="p-input-icon-right">
+                <i class="pi pi-search"></i>
+                <input type="text" pInputText [(ngModel)]="search" (input)="searchCheck()" placeholder="Arama yap..."/>
+            </span>
+        </div>    
+    </div>
+    </div>
+    <div id="food_content">
+        @if(result.length){
+            @for (food of result; track $index) {
+                <app-food-card (removeItemEvent)="removeRecipe($event)" [food]="food"></app-food-card>
+            }
+        }
+    </div>
+</div>

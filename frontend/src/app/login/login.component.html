@@ -1,0 +1,30 @@
+<div id="container">
+    <div id="content">
+        <h1>Pratik ve lezzetli yemek tarifleri...</h1>
+        <form action="">
+            @if(!isLoginPage){   
+                <div class="input">
+                    <span class="p-float-label">
+                        <input pInputText id="name" name="name_value" [(ngModel)]="user.name"/>
+                        <label htmlFor="name">Ad-Soyad</label>
+                    </span>
+                </div>
+            }
+            <div class="input">
+                <span class="p-float-label">
+                    <input pInputText id="email" name="email_value" [(ngModel)]="user.email"/>
+                    <label htmlFor="email">E-posta</label>
+                </span>
+            </div>
+            <div class="input" [style]="{width:'300px'}">
+                <span class="p-float-label">
+                <input pInputText [(ngModel)]="user.password" id="password" type="password" name="password_value"/>
+                <label htmlFor="password">Şifre</label>
+                </span>
+            </div>
+                @if(isLoginPage){<button pButton [loading]="loading" label="Giriş" (click)="onLogin()"></button>}
+                @else{<button (click)="onRegister()">Kayıt ol</button>}
+        </form>
+        <a (click)="changePage()">{{pageSwitch}}</a>
+    </div>
+</div>

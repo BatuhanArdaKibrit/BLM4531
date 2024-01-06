@@ -1,0 +1,66 @@
+div#container{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+div#form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 55px;
+    transform: translate(0,-50px);
+}
+
+div.col{
+    margin-bottom: 35px;
+}
+
+.mr-3{
+    margin-right: 24px;
+}
+i:hover{
+    cursor: pointer;
+}
+div#confirm-dialog{
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 2;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+div#confirm-content{
+    background-color: aliceblue;
+    width: 450px;
+    height: 325px;
+    border-radius: 25px;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+div#confirm-header{
+    font-weight: 600;
+    font-size: 1.5em;
+    display: flex;
+    justify-content: space-evenly;
+}
+div#confirm-footer{
+    display: flex;
+    gap: 30px;
+}
+div#confirm-body{
+    display: flex;
+    gap: 10px;
+}
+div#confirm-close{
+    margin-left: auto;
+}
+

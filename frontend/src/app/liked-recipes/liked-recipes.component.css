@@ -1,0 +1,29 @@
+div#container{
+    
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+    min-height: 100vh;
+}
+div#content{
+    display: flex;
+    flex-direction: column;
+    width: 1200px;
+}
+div#title-content{
+    display: flex;
+
+}
+button#add_recipe{
+    margin-left: auto;
+}
+div#food_content{
+    display: grid;
+    gap: 50px;
+    margin-block:25px;
+    grid-template-columns: repeat(3,1fr);
+}
+
+div#search-box{
+    margin-left: auto;
+}

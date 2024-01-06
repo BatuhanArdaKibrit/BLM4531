@@ -1,0 +1,46 @@
+<div id="container">
+    <div id="form">
+        <form action="">
+            @if(routeId == 0){
+                <div class="col">
+                    <label for="name">Yeni Ad-Soyad</label>
+                    <div class="nest-col">
+                    <input pInputText id="name" name="name_value" [(ngModel)]="user.name"/>
+                    </div>
+                    <div id="nest-col">
+                        <p-button icon="pi pi-angle-left" severity="warning" size="small" class="mr-3" [routerLink]="['/account']"></p-button>
+                        <p-button [loading]="loading" size="small" severity="warning" label="Kaydet" (onClick)="saveName()"></p-button>
+                    </div>
+                </div>
+            }
+            @if(routeId == 1){
+                <div class="col">
+                    <label for="email">E-posta Değiştirme</label>
+                    <div class="nest-col">
+                    <input pInputText id="email" name="email_value" [(ngModel)]="user.email"/>
+                    </div>
+                    <div id="nest-col">
+                        <p-button icon="pi pi-angle-left" size="small" class="mr-3" [routerLink]="['/account']"></p-button>
+                        <p-button [loading]="loading" size="small" label="Kaydet" (onClick)="saveEmail()"></p-button>
+                    </div>
+                </div>
+            }
+            @if(routeId == 2){
+                <div class="col">
+                    <label for="old_password">Eski Şifre</label>
+                    <div class="nest-col">
+                        <p-password id="old_password" name="password_value" [(ngModel)]="old_password"></p-password>
+                    </div>
+                    <label for="password">Yeni Şifre</label>
+                    <div class="nest-col">
+                        <p-password id="password" name="password_value" [(ngModel)]="user.password"></p-password>
+                    </div>
+                    <div id="nest-col">
+                        <p-button icon="pi pi-angle-left" size="small" class="mr-3" [routerLink]="['/account']"></p-button>
+                        <p-button [loading]="loading" size="small" label="Kaydet" (onClick)="savePassword()"></p-button>
+                    </div>
+                </div>
+            }
+        </form>
+    </div>
+</div>

@@ -1,0 +1,10 @@
+<div class="message">
+    <p-messages [(value)]="message" [enableService]="false" id="message"></p-messages>
+</div>
+@if(this.authService.isAuthenticated()){
+    <app-menubar [name]="this.authService.getName()"></app-menubar>
+}
+<router-outlet></router-outlet>
+@if(this.authService.isAuthenticated()){
+    <app-footer></app-footer>
+}

@@ -1,0 +1,8 @@
+<p-card [header]="food?.name" [subheader]="food?.type" [style]="{ width: '360px' }">
+    <ng-template pTemplate="header">
+        <img [src]="imageUrl" [alt]="food?.name"/>
+    </ng-template>
+    <span>Tarifi yapan: {{food?.createdBy}}</span>
+    <p-button id="likeButton" [icon]="food?.isLiked ? 'pi pi-heart-fill' : 'pi pi-heart'" [rounded]="true" [text]="true" [raised]="true" severity="danger" (onClick)="likeRecipe()"></p-button>
+    <p-button id="detailButton" [icon]="'pi pi-chevron-right'" [rounded]="true" [text]="true" [raised]="true" severity="danger" [routerLink]="['/food_detail',food?.id]"></p-button>
+</p-card>

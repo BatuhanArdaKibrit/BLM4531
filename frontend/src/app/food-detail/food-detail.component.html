@@ -1,0 +1,50 @@
+<div id="container">
+    <div id="img" [style]="'background-image:url('+imageUrl+')'">
+        <div id="img-title">
+            <div id="img-name">{{food?.name}}</div>
+            <div>{{food?.type}}</div>
+        </div>
+        <div id="created-by">Tarifi yapan: {{food?.createdBy}}</div>
+    </div>
+    <div id="content">
+        <div id="ingredients"> 
+            <div class="title">Malzemeler</div>
+            <ul>
+                @for (ingredient of ingredients; track $index) {
+                    <li>{{ingredient}}</li>
+                }            
+            </ul>
+            <hr>
+            <div class="title">Tarif</div>
+            <div id="recipe">
+                <p id="recipe-content">
+                {{food?.recipe}}
+                </p>
+            </div>
+        </div>
+        <div id="buttons">
+            <p-button icon="pi pi-angle-left" size="small" class="mr-3" (click)="this.location.back()"></p-button>
+            <p-button id="like-button" [icon]="food?.isLiked ? 'pi pi-heart-fill' : 'pi pi-heart'" [label]="likeMessage" [text]="true" [raised]="true" severity="danger" (onClick)="likeRecipe()"></p-button>
+            @if(isOwner){
+                <p-button id="delete-button" [icon]="'pi pi-trash'" label="Tarifi sil" severity="danger" (click)="this.visible = true" [raised]="true"></p-button>
+                <p-button id="edit-button" [icon]="'pi pi-pencil'" label="Tarifi düzenle" severity="danger" [routerLink]="['/edit_recipe',food?.id]" [raised]="true"></p-button>
+            }
+            <div id="confirm-dialog" [style.display]="this.visible ? 'flex': 'none'">
+                <div id="confirm-content">
+                    <div id="confirm-header">
+                        <div>Onaylamak istiyor musunuz?</div>
+                        <div id="confirm-close" (click)="this.visible=false"><i class="pi pi-times"></i></div>
+                    </div>
+                    <div id="confirm-body">
+                        <i class="pi pi-exclamation-circle"></i>
+                        <div>Bu tarif ana sayfadan ve tarifler listenizden tamamen silinecektir. Onaylamak istiyor musunuz?</div>
+                    </div>
+                    <div id="confirm-footer">
+                        <p-button icon="pi pi-check" label="Onayla" id="accept-button" (onClick)="acceptConfirm()" severity="danger"></p-button>
+                        <p-button  icon="pi pi-times" label="İptal et" id="reject-button" (onClick)="rejectConfirm()" severity="danger"></p-button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

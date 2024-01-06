@@ -1,0 +1,47 @@
+<div id="container">
+    <div id="form">
+        <form action="">
+                <div class="col">
+                    <label for="username">Ad-Soyad</label>
+                    <div class="nest-col">
+                    <input pInputText id="username" name="name_value" aria-describedby="username-help" class="mr-3" [disabled]="true" [value]="user.name" />
+                    <p-button [outlined]="true" size="small" label="Ad-Soyad Değiştir" (onClick)="changeSettings(0)" icon="pi pi-user-edit"></p-button>
+                    </div>
+                    <small id="username-help">Ad-Soyad değişimi için butona tıklayınız</small>
+                </div>
+                <div class="col">
+                    <label for="email">E-posta</label>
+                    <div class="nest-col">
+                    <input pInputText id="email" name="email_value" aria-describedby="email-help" class="mr-3" [disabled]="true" [value]="user.email"/>
+                    <p-button [outlined]="true" size="small" label="E-posta değiştir" (onClick)="changeSettings(1)" icon="pi pi-user-edit"></p-button>
+                    </div>
+                    <small id="email-help">E-posta değişimi için butona tıklayınız</small>
+                </div>
+                <div class="col">
+                    <label for="password">Şifre</label>
+                    <div class="nest-col">
+                    <p-password id="password" name="password_value" aria-describedby="password-help" class="mr-3" [disabled]="true" [placeholder]="user.password"></p-password>
+                    <p-button [outlined]="true" size="small" label="Şifre değiştir" (onClick)="changeSettings(2)" icon="pi pi-user-edit"></p-button>
+                    </div>
+                    <small id="password">Şifre değişimi için butona tıklayınız</small>
+                </div>
+        </form>
+        <p-button id="delete-button" [icon]="'pi pi-exclamation-triangle'" label="Hesabımı sil" severity="danger" (click)="this.visible = true"></p-button>
+    </div>
+    <div id="confirm-dialog" [style.display]="this.visible ? 'flex': 'none'">
+        <div id="confirm-content">
+            <div id="confirm-header">
+                <div>Onaylamak istiyor musunuz?</div>
+                <div id="confirm-close" (click)="this.visible=false"><i class="pi pi-times"></i></div>
+            </div>
+            <div id="confirm-body">
+                <i class="pi pi-exclamation-circle"></i>
+                <div>Hesabınız ve kaydettiğiniz tarifler kalıcı olarak silinecektir. Onaylamak istiyor musunuz?</div>
+            </div>
+            <div id="confirm-footer">
+                <p-button icon="pi pi-check" label="Hesabımı sil" id="accept-button" (onClick)="acceptConfirm()" severity="danger"></p-button>
+                <p-button  icon="pi pi-times" label="İptal et" id="reject-button" (onClick)="rejectConfirm()" severity="danger"></p-button>
+            </div>
+        </div>
+    </div>
+</div>

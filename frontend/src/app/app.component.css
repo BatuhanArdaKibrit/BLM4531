@@ -1,0 +1,23 @@
+:host{
+    padding: 0px;
+    margin: 0px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+div.message{
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+}
+
+::ng-deep .p-element.p-button.p-component {
+    color: #000;
+    background-color: #F5CF3C;
+    border: solid 0 transparent;
+}
+

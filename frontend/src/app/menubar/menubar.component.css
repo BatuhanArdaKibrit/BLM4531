@@ -1,0 +1,10 @@
+mat-toolbar{
+    display: flex;
+    gap: 45px;
+}
+a.active{
+    background-color: orange;
+}
+mat-toolbar div{
+    margin-left: auto;
+}

@@ -1,0 +1,111 @@
+div#container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+div#content{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    width: 80%;
+    margin-top: 15px;
+}
+div#img{
+    position:relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: aliceblue;
+    height: 35vh;
+    background-size:auto;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-origin: border-box;
+    background-color: #F5F5F5;
+}
+div#created-by{
+    position:absolute;
+    color: black;
+    bottom: 0;
+    right: 10px;
+    padding-inline: 10px;
+    padding-block: 3px;
+    background-color: aliceblue;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+div#img-name{
+    font-weight: bold;
+    font-size:3em;
+}
+.title{
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+div#recipe{
+    text-align: justify;
+    padding-inline-start: 40px;
+}
+div#buttons{
+    display: flex;
+    gap: 10px;
+}
+#like-button{
+    margin-left: auto;
+}
+div#img-title{
+    background-color: transparent;
+    text-align: center;
+    background-color: rgba(53, 63, 68, 0.1);
+    border-radius: 12px;
+    backdrop-filter: blur(4px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    padding-inline: 10px;
+    padding-block: 3px;
+}
+i:hover{
+    cursor: pointer;
+}
+div#confirm-dialog{
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 2;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+div#confirm-content{
+    background-color: aliceblue;
+    width: 450px;
+    height: 325px;
+    border-radius: 25px;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+div#confirm-header{
+    font-weight: 600;
+    font-size: 1.5em;
+    display: flex;
+    justify-content: space-evenly;
+}
+div#confirm-footer{
+    display: flex;
+    gap: 30px;
+}
+div#confirm-body{
+    display: flex;
+    gap: 10px;
+}
+div#confirm-close{
+    margin-left: auto;
+}

@@ -1,0 +1,10 @@
+<mat-toolbar>
+    <a mat-flat-button color="accent" [routerLink]="['/home']" routerLinkActive="active">Ana Sayfa <i></i></a>
+    <a mat-flat-button color="accent" >Hakkımızda</a>
+    <a mat-flat-button color="accent" [routerLink]="['/liked_recipes']" routerLinkActive="active">Favoriler</a>
+    <a mat-flat-button color="accent" [routerLink]="['/my_recipes']" routerLinkActive="active">Tariflerim</a>
+    <a mat-flat-button color="accent" [routerLink]="['/account']" routerLinkActive="active"><i class="pi pi-user"></i></a>
+    <a mat-flat-button color="accent" (click)="signOut()">Çıkış yap <i class="pi pi-sign-out"></i></a>
+    
+    <div>Merhaba {{name}}</div>
+</mat-toolbar>
